@@ -39,7 +39,7 @@ const Banner = () => {
                 >
                     <div className="w-[1280px] h-[600px] pt-48 pl-24 justify-center bg-gradient-to-r from-slate-600 ">
                         <h4 className="text-3xl font-bold text-yellow-500 "> 𝐒𝐩𝐞𝐧𝐝 𝐚 𝐠𝐫𝐞𝐚𝐭 𝐰𝐞𝐞𝐤 𝐰𝐢𝐭𝐡</h4>
-                        <h2 className="text-6xl font-bold ">𝐇𝐞𝐥𝐥𝐨 𝐒𝐮𝐦𝐦𝐞𝐫 <br />  𝐂𝐡𝐢𝐥𝐝𝐫𝐞𝐧 𝐂𝐚𝐦𝐩</h2>
+                        <h2 className="text-6xl font-bold ">𝐇𝐞𝐥𝐥𝐨 𝐒𝐮𝐦𝐦𝐞𝐫 <br />  𝐒𝐩𝐨𝐫𝐭𝐬 𝐚𝐜𝐚𝐝𝐞𝐦𝐢𝐞𝐬</h2>
                         <Link><button className="btn btn-error mt-4">Register for camp</button></Link>
                     </div>
                 </div>
@@ -54,7 +54,7 @@ const Banner = () => {
                 >
                     <div className="w-[1280px] h-[600px] pt-48 pl-24 justify-center bg-gradient-to-r from-slate-600 ">
                         <h4 className="text-3xl font-bold text-yellow-500 "> 𝐒𝐩𝐞𝐧𝐝 𝐚 𝐠𝐫𝐞𝐚𝐭 𝐰𝐞𝐞𝐤 𝐰𝐢𝐭𝐡</h4>
-                        <h2 className="text-6xl font-bold ">𝐇𝐞𝐥𝐥𝐨 𝐒𝐮𝐦𝐦𝐞𝐫 <br />  𝐂𝐡𝐢𝐥𝐝𝐫𝐞𝐧 𝐂𝐚𝐦𝐩</h2>
+                        <h2 className="text-6xl font-bold ">𝐇𝐞𝐥𝐥𝐨 𝐒𝐮𝐦𝐦𝐞𝐫 <br />  𝐒𝐩𝐨𝐫𝐭𝐬 𝐚𝐜𝐚𝐝𝐞𝐦𝐢𝐞𝐬</h2>
                         <Link><button className="btn btn-error mt-4">Register for camp</button></Link>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ const Banner = () => {
                 >
                     <div className="w-[1280px] h-[600px] pt-48 pl-24 justify-center bg-gradient-to-r from-slate-600 ">
                         <h4 className="text-3xl font-bold text-yellow-500 "> 𝐒𝐩𝐞𝐧𝐝 𝐚 𝐠𝐫𝐞𝐚𝐭 𝐰𝐞𝐞𝐤 𝐰𝐢𝐭𝐡</h4>
-                        <h2 className="text-6xl font-bold ">𝐇𝐞𝐥𝐥𝐨 𝐒𝐮𝐦𝐦𝐞𝐫 <br />  𝐂𝐡𝐢𝐥𝐝𝐫𝐞𝐧 𝐂𝐚𝐦𝐩</h2>
+                        <h2 className="text-6xl font-bold ">𝐇𝐞𝐥𝐥𝐨 𝐒𝐮𝐦𝐦𝐞𝐫 <br />  𝐒𝐩𝐨𝐫𝐭𝐬 𝐚𝐜𝐚𝐝𝐞𝐦𝐢𝐞𝐬</h2>
                         <Link><button className="btn btn-error mt-4">Register for camp</button></Link>
                     </div>
                 </div>
@@ -84,7 +84,7 @@ const Banner = () => {
                 >
                     <div className="w-[1280px] h-[600px] pt-48 pl-24 justify-center bg-gradient-to-r from-slate-600 ">
                         <h4 className="text-3xl font-bold text-yellow-500 "> 𝐒𝐩𝐞𝐧𝐝 𝐚 𝐠𝐫𝐞𝐚𝐭 𝐰𝐞𝐞𝐤 𝐰𝐢𝐭𝐡</h4>
-                        <h2 className="text-6xl font-bold ">𝐇𝐞𝐥𝐥𝐨 𝐒𝐮𝐦𝐦𝐞𝐫 <br />  𝐂𝐡𝐢𝐥𝐝𝐫𝐞𝐧 𝐂𝐚𝐦𝐩</h2>
+                        <h2 className="text-6xl font-bold ">𝐇𝐞𝐥𝐥𝐨 𝐒𝐮𝐦𝐦𝐞𝐫 <br />  𝐒𝐩𝐨𝐫𝐭𝐬 𝐚𝐜𝐚𝐝𝐞𝐦𝐢𝐞𝐬</h2>
                         <Link><button className="btn btn-error mt-4">Register for camp</button></Link>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ const Banner = () => {
                 >
                     <div className="w-[1280px] h-[600px] pt-48 pl-24 justify-center bg-gradient-to-r from-slate-600 ">
                         <h4 className="text-3xl font-bold text-yellow-500 "> 𝐒𝐩𝐞𝐧𝐝 𝐚 𝐠𝐫𝐞𝐚𝐭 𝐰𝐞𝐞𝐤 𝐰𝐢𝐭𝐡</h4>
-                        <h2 className="text-6xl font-bold ">𝐇𝐞𝐥𝐥𝐨 𝐒𝐮𝐦𝐦𝐞𝐫 <br />  𝐂𝐡𝐢𝐥𝐝𝐫𝐞𝐧 𝐂𝐚𝐦𝐩</h2>
+                        <h2 className="text-6xl font-bold ">𝐇𝐞𝐥𝐥𝐨 𝐒𝐮𝐦𝐦𝐞𝐫 <br />  𝐒𝐩𝐨𝐫𝐭𝐬 𝐚𝐜𝐚𝐝𝐞𝐦𝐢𝐞𝐬</h2>
                         <Link><button className="btn btn-error mt-4">Register for camp</button></Link>
                     </div>
                 </div>

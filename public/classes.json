@@ -2,160 +2,160 @@
     {
         "Image": "https://i.ibb.co/6XwYmFc/istockphoto-1167733673-612x612.jpg",
         "Name": "Swimming",
-        "Instructor name": "Kathleen",
-        "Available seats": "15",
+        "Instructor_name": "Kathleen",
+        "Available_seats": "15",
         "Price": "450",
         "category":"outdoor"
     },
     {
         "Image": "https://i.ibb.co/Kh1tx1h/images-14.jpg",
         "Name": "Football",
-        "Instructor name": "Ethan",
-        "Available seats": "24",
+        "Instructor_name": "Ethan",
+        "Available_seats": "24",
         "Price": "300",
         "category":"outdoor"
     },
     {
         "Image": "https://i.ibb.co/0scWV4d/depositphotos-52716859-stock-photo-smiling-children-running-marathon-together.webp",
         "Name": "Racing competition",
-        "Instructor name": "Ethan",
-        "Available seats": "30",
+        "Instructor_name": "Ethan",
+        "Available_seats": "30",
         "Price": "340",
         "category":"outdoor"
     },
     {
         "Image": "https://i.ibb.co/pxZv480/c1-365457-130820020019.jpg",
         "Name": "Badminton",
-        "Instructor name": "David",
-        "Available seats": "14",
+        "Instructor_name": "David",
+        "Available_seats": "14",
         "Price": "120",
         "category":"outdoor"
     },
     {
         "Image": "https://i.ibb.co/xf9DwZH/img-20180625-135929-1-jpg.webp",
         "Name": "basketball",
-        "Instructor name": "Joseph",
-        "Available seats": "35",
+        "Instructor_name": "Joseph",
+        "Available_seats": "35",
         "Price": "180",
         "category":"outdoor"
     },
     {
         "Image": "https://i.ibb.co/SNTsfX7/happy-kids-playing-with-jigsaw-puzzle-pieces-on-white-W19-DBG.jpg",
         "Name": "Puzzle_solving",
-        "Instructor name": "Suzanne",
-        "Available seats": "40",
+        "Instructor_name": "Suzanne",
+        "Available_seats": "40",
         "Price": "200",
         "category":"indoor"
     },
     {
         "Image": "https://i.ibb.co/MSqK6b6/images-45-3.jpg",
         "Name": "Rubiks-cube-solving",
-        "Instructor name": "Nina",
-        "Available seats": "34",
+        "Instructor_name": "Nina",
+        "Available_seats": "34",
         "Price": "180",
         "category":"indoor"
     },
     {
         "Image": "https://i.ibb.co/pdDPJkf/Kids-play-chess-during-chess-competition.jpg",
         "Name": "Chess",
-        "Instructor name": "Jake",
-        "Available seats": "27",
+        "Instructor_name": "Jake",
+        "Available_seats": "27",
         "Price": "360",
         "category":"indoor"
     },
     {
         "Image": "https://i.ibb.co/YbYwcp5/Carrom.jpg",
         "Name": "Carrom",
-        "Instructor name": "Suzanne",
-        "Available seats": "25",
+        "Instructor_name": "Suzanne",
+        "Available_seats": "25",
         "Price": "250",
         "category":"indoor"
     },
     {
         "Image": "https://i.ibb.co/WG6sRYK/ludo-1.jpg",
         "Name": "Ludo",
-        "Instructor name": "David",
-        "Available seats": "20",
+        "Instructor_name": "David",
+        "Available_seats": "20",
         "Price": "150",
         "category":"indoor"
     },
     {
         "Image": "https://i.ibb.co/6XwYmFc/istockphoto-1167733673-612x612.jpg",
         "Name": "Swimming",
-        "Instructor name": "Kathleen",
-        "Available seats": "15",
+        "Instructor_name": "Kathleen",
+        "Available_seats": "15",
         "Price": "450",
         "category":"outdoor"
     },
     {
         "Image": "https://i.ibb.co/Kh1tx1h/images-14.jpg",
         "Name": "Football",
-        "Instructor name": "Ethan",
-        "Available seats": "24",
+        "Instructor_name": "Ethan",
+        "Available_seats": "24",
         "Price": "300",
         "category":"outdoor"
     },
     {
         "Image": "https://i.ibb.co/0scWV4d/depositphotos-52716859-stock-photo-smiling-children-running-marathon-together.webp",
         "Name": "Racing competition",
-        "Instructor name": "Ethan",
-        "Available seats": "30",
+        "Instructor_name": "Ethan",
+        "Available_seats": "30",
         "Price": "340",
         "category":"outdoor"
     },
     {
         "Image": "https://i.ibb.co/pxZv480/c1-365457-130820020019.jpg",
         "Name": "Badminton",
-        "Instructor name": "David",
-        "Available seats": "14",
+        "Instructor_name": "David",
+        "Available_seats": "14",
         "Price": "120",
         "category":"outdoor"
     },
     {
         "Image": "https://i.ibb.co/xf9DwZH/img-20180625-135929-1-jpg.webp",
         "Name": "basketball",
-        "Instructor name": "Joseph",
-        "Available seats": "35",
+        "Instructor_name": "Joseph",
+        "Available_seats": "35",
         "Price": "180",
         "category":"outdoor"
     },
     {
         "Image": "https://i.ibb.co/SNTsfX7/happy-kids-playing-with-jigsaw-puzzle-pieces-on-white-W19-DBG.jpg",
         "Name": "Puzzle_solving",
-        "Instructor name": "Suzanne",
-        "Available seats": "40",
+        "Instructor_name": "Suzanne",
+        "Available_seats": "40",
         "Price": "200",
         "category":"indoor"
     },
     {
         "Image": "https://i.ibb.co/MSqK6b6/images-45-3.jpg",
         "Name": "Rubiks-cube-solving",
-        "Instructor name": "Nina",
-        "Available seats": "34",
+        "Instructor_name": "Nina",
+        "Available_seats": "34",
         "Price": "180",
         "category":"indoor"
     },
     {
         "Image": "https://i.ibb.co/pdDPJkf/Kids-play-chess-during-chess-competition.jpg",
         "Name": "Chess",
-        "Instructor name": "Jake",
-        "Available seats": "27",
+        "Instructor_name": "Jake",
+        "Available_seats": "27",
         "Price": "360",
         "category":"indoor"
     },
     {
         "Image": "https://i.ibb.co/YbYwcp5/Carrom.jpg",
         "Name": "Carrom",
-        "Instructor name": "Suzanne",
-        "Available seats": "25",
+        "Instructor_name": "Suzanne",
+        "Available_seats": "25",
         "Price": "250",
         "category":"indoor"
     },
     {
         "Image": "https://i.ibb.co/WG6sRYK/ludo-1.jpg",
         "Name": "Ludo",
-        "Instructor name": "David",
-        "Available seats": "20",
+        "Instructor_name": "David",
+        "Available_seats": "20",
         "Price": "150",
         "category":"indoor"
     }

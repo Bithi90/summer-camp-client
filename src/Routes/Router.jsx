@@ -6,6 +6,10 @@ import Main from "../LayOut/Main";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import Instructors from "../Pages/Instructors/Instructors";
+import Classes from "../Pages/Classes/Classes";
+import PrivateRoutes from "./PrivateRoutes";
+import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 
 
    export const router = createBrowserRouter([
@@ -24,7 +28,19 @@ import SignUp from "../Pages/SignUp/SignUp";
         {
           path:'signup',
           element:<SignUp></SignUp>
+        },
+        {
+          path:'instructors',
+          element:<Instructors></Instructors>
+        },
+        {
+          path:'classes',
+          element:<PrivateRoutes><Classes></Classes></PrivateRoutes>
         }
       ]
     },
+    {
+      path:'*',
+      element:<ErrorPage></ErrorPage>
+    }
   ]);

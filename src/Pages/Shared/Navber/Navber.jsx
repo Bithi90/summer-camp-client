@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/pngtree-hello-summer-quote-lettering-png-image_2216477.jpg';
+import logo from '../../../assets/logo2.jpg';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
@@ -14,28 +14,24 @@ const Navber = () => {
     }
 
     const navOption = <>
-        <li><Link to='/'><a>Home</a></Link></li>
-        <li><Link><a>Instructors</a></Link></li>
-        <li><Link><a>Classes</a></Link></li>
-        <li><Link><a>Dashboard </a></Link></li>
+        <li className='text-amber-400 text-xl font-bold '><Link to='/'><a>Home</a></Link></li>
+        <li className='text-amber-400 text-xl font-bold '><Link to='/instructors'><a>Instructors</a></Link></li>
+        <li className='text-amber-400 text-xl font-bold '><Link to='/classes'><a>Classes</a></Link></li>
+        <li className='text-amber-400 text-xl font-bold '><Link><a>Dashboard </a></Link></li>
 
 
         {
             user ? <><button onClick={handleLogOut} className="btn btn-active  btn-ghost btn-xs mt-2 ">LogOut</button>
-                <div className="avatar">
-                    <div className="w-24 rounded-full">
-                        <img src={user?.photo}/>
-                    </div>
-                </div>
+                <span>{user?.displayName}</span>
             </> :
                 <>
-                    <li><Link to='login'>Login</Link></li>
+                    <li className='text-amber-800 text-xl font-bold '><Link to='login'>Login</Link></li>
                 </>
         }
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar fixed z-10  bg-opacity-20 max-w-screen-xl bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -45,7 +41,10 @@ const Navber = () => {
                         {navOption}
                     </ul>
                 </div>
-                <img className='h-[100px] w-[120px]' src={logo} alt="" />
+                <div className='grid justify-items-center'>
+                    <img className='h-[80px] w-[100px]' src={logo} alt="" />
+                    <p className='text-orange-400 text-xl font-bold mb-2'>𝕊𝕡𝕠𝕣𝕥𝕤 𝔸𝕔𝕒𝕕𝕖𝕞𝕪</p>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -53,7 +52,17 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                {
+                    user ? <>
+                        <div className="avatar">
+                            <div className="w-24 rounded-full">
+                                <img src={user?.photoURL} />
+                            </div>
+                        </div>
+                    </> : <>
+                        <Link to='/signup'><button className="btn btn-warning">Register</button></Link>
+                    </>
+                }
             </div>
         </div>
     );

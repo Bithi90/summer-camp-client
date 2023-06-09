@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import signupImg from '../../assets/loginImg.jpg';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useRef } from "react";
@@ -9,8 +9,9 @@ import Swal from "sweetalert2";
 
 const SignUp = () => {
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext);
+    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
+    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const password = useRef({});
     password.current = watch("password", "");
@@ -21,15 +22,21 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                Swal.fire({
-                    title: 'register successfully',
-                    showClass: {
-                      popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                      popup: 'animate__animated animate__fadeOutUp'
-                    }
+               
+                  updateUserProfile(data.name, data.photoURL)
+                  .then(() =>{
+                    console.log('user profile info updated')
+                    reset();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+                      navigate('/');
                   })
+                  .catch(error => console.log(error))
             })
     }
 
