@@ -8,7 +8,7 @@ const Classes = () => {
         <div className="grid lg:grid-cols-3 g-10">
             {
                 sports.map(sport => <Class
-                key={sport.Name}
+                key={sport._id}
                 sport={sport}
                 ></Class>)
             }

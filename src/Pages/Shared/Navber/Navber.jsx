@@ -3,10 +3,11 @@ import logo from '../../../assets/logo2.jpg';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
+
 const Navber = () => {
 
     const { user, logOut } = useContext(AuthContext);
-
+   
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -17,7 +18,9 @@ const Navber = () => {
         <li className='text-amber-400 text-xl font-bold '><Link to='/'><a>Home</a></Link></li>
         <li className='text-amber-400 text-xl font-bold '><Link to='/instructors'><a>Instructors</a></Link></li>
         <li className='text-amber-400 text-xl font-bold '><Link to='/classes'><a>Classes</a></Link></li>
-        <li className='text-amber-400 text-xl font-bold '><Link><a>Dashboard </a></Link></li>
+        <li className='text-amber-400 text-xl font-bold '>
+            <Link to='/dashboard/selectedClasses'><a>Dashboard </a></Link>
+        </li>
 
 
         {

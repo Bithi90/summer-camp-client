@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useRef } from "react";
 import Swal from "sweetalert2";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const SignUp = () => {
@@ -12,6 +13,7 @@ const SignUp = () => {
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
+    
 
     const password = useRef({});
     password.current = watch("password", "");
@@ -22,21 +24,33 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-               
-                  updateUserProfile(data.name, data.photoURL)
-                  .then(() =>{
-                    console.log('user profile info updated')
-                    reset();
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Your work has been saved',
-                        showConfirmButton: false,
-                        timer: 1500
-                      });
-                      navigate('/');
-                  })
-                  .catch(error => console.log(error))
+
+                updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        const saveUser = {name: data.name, email: data.email}
+                        fetch('http://localhost:5000/users',{
+                            method:'POST',
+                            headers:{
+                                'content-type':'application/json'
+                            },
+                            body:JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'Your work has been saved',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/');
+                                }
+                            })
+                    })
+                    .catch(error => console.log(error))
             })
     }
 
@@ -102,6 +116,7 @@ const SignUp = () => {
                             <input className="btn bg-lime-700 btn-success" type="submit" value="Sign Up" />
                         </div>
                     </form>
+                    <SocialLogin></SocialLogin>
                     <p>Allready have an account? Plz <Link to='/login'>Login</Link></p>
                 </div>
             </div>
