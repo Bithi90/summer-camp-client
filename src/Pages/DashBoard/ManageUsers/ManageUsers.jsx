@@ -1,20 +1,23 @@
 /* eslint-disable react/no-unknown-property */
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
 import { FaTrashAlt } from "react-icons/Fa";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 const ManageUsers = () => {
 
+    const [axiosSecure] = useAxiosSecure();
+
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const result = await fetch('http://localhost:5000/users')
-        return result.json();
+        const result = await axiosSecure.get('/users')
+        return result.data;
     })
-    const [disabled, setDisabled] = useState(false);
+  
 
     const handleMakeAdmin = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        console.log(id);
+        fetch(`http://localhost:5000/users/admin/${id}`,{
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -28,11 +31,66 @@ const ManageUsers = () => {
                         title: 'admin created successfully',
                         showConfirmButton: false,
                         timer: 1500
-                    })
+                    });
+                  
                 }
             })
-            setDisabled(true);
+            
     }
+    const handleMakeInstractor = id => {
+        console.log('instractor btn clicked')
+        console.log(id);
+        fetch(`http://localhost:5000/users/instractor/${id}`,{
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'instractor created successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                  
+                }
+            })
+            
+    }
+
+    const handleDelete = user =>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/users/${user._id}`,{
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data =>{
+                    if(data.deletedCount>0){
+                        refetch();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                          )
+                    }
+                })
+              
+            }
+          })
+    }
+   
 
     return (
         <div className="w-full ml-20">
@@ -60,15 +118,7 @@ const ManageUsers = () => {
                                 user={user}
                             >
                                 <td>{index + 1}</td>
-                                {/* <td>
-                                    <div className="flex items-center ">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src={user.Image} alt="Avatar Tailwind CSS Component" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td> */}
+                               
                                 <td>
                                     <h2 className="font-bold">{user.name}</h2></td>
                                 <td>
@@ -77,16 +127,31 @@ const ManageUsers = () => {
                                 <td className="font-bold">
                                     {
                                         user.role === 'admin' ? 'Admin' :
-                                            <p>Student</p>
+                                        user.role ==='instractor' ?'Instractor':
+                                            <p>{user.role}</p>
                                     }</td>
                                 <th>
-                                    <button disabled={disabled} onClick={() => handleMakeAdmin(user._id)} className="btn bg-lime-700 btn-sm text-white">Make Admin</button>
+                                    {
+                                        user.role === 'admin' || user.role === 'instractor' ?<>
+                                            <button disabled={true} className="btn  btn-sm">Make Admin</button>
+                                        </> : 
+                                        <button onClick={() => handleMakeAdmin(user)} className="btn bg-lime-700 btn-sm text-white">Make Admin</button>
+                                    }
+                                
+                               
+                                </th>
+
+                                <th>
+                                {
+                                        user.role === 'instractor' || user.role === 'admin'?<>
+                                            <button disabled={true} className="btn  btn-sm">Make Instractor</button>
+                                        </> : 
+                                        <button onClick={() => handleMakeInstractor(user._id)} className="btn bg-lime-700 btn-sm text-white">Make Instractor</button>
+                                    }
+                                    
                                 </th>
                                 <th>
-                                    <button className="btn bg-lime-700 btn-sm text-white">Make Instractor</button>
-                                </th>
-                                <th>
-                                    <button className="btn text-2xl btn-sm text-red-600"><FaTrashAlt></FaTrashAlt></button>
+                                    <button onClick={() => handleDelete(user._id)} className="btn text-2xl btn-sm text-red-600"><FaTrashAlt></FaTrashAlt></button>
                                 </th>
                             </tr>)
                         }

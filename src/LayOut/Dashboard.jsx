@@ -4,6 +4,8 @@ import { VscDebugContinue } from 'react-icons/Vsc';
 import { GiWallet } from 'react-icons/Gi';
 import { FaCircle, FaHome, FaUsers } from 'react-icons/Fa';
 import useSelected from "../hooks/useSelected";
+import useAdmin from "../hooks/useAdmin";
+import useMakeInstractor from "../hooks/useMakeInstractor";
 
 
 
@@ -11,8 +13,10 @@ import useSelected from "../hooks/useSelected";
 const Dashboard = () => {
     const [selected] = useSelected();
 
-    const isAdmin = true;
+    // const isAdmin = true;
     // const isInstractor = true;
+    const [isAdmin] = useAdmin();
+    const [isInstractor] = useMakeInstractor();
 
     return (
         <div className="drawer lg:drawer-open">
@@ -26,22 +30,7 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-lime-700  text-white font-semibold">
                     {/* Sidebar content here */}
-                     {/*  isInstractor ? <>
-                            <li>
-                                <div className='grid justify-items-center border-b-4 border-orange-500'>
-                                    <p className='text-orange-400 text-xl font-bold mb-2'>𝕊𝕡𝕠𝕣𝕥𝕤 𝔸𝕔𝕒𝕕𝕖𝕞𝕪</p>
-                                </div>
-                            </li>
-
-                            <li><NavLink to='/dashboard/userHome'><FaHome></FaHome> Instractor Home</NavLink></li>
-                            <li>
-                                <NavLink to='/dashboard/selectedClasses'><BiSelectMultiple></BiSelectMultiple> My Classes <div className="badge text-white bg-orange-500">+{selected.length}</div></NavLink></li>
-                            <li><NavLink to='/dashboard/enrolledClasses'><VscDebugContinue></VscDebugContinue> Add a Class </NavLink></li>
-                            <li><NavLink to='/dashboard/payment'><GiWallet></GiWallet> My Payment History </NavLink></li>
-                            <li className="border-t-4 border-orange-500 mt-10"><NavLink to='/'><FaHome></FaHome> Home </NavLink></li>
-                            <li><NavLink to='/classes'><FaCircle></FaCircle> All Classes </NavLink></li>
-
-                        </> : */}
+                     {/*  */}
 
                     {
                         isAdmin ? <>
@@ -51,13 +40,29 @@ const Dashboard = () => {
                                 </div>
                             </li>
 
-                            <li><NavLink to='/dashboard/userHome'><FaHome></FaHome> Admin Home</NavLink></li>
+                            <li><NavLink to='/dashboard/adminHome'><FaHome></FaHome> Admin Home</NavLink></li>
                             <li>
                                 <NavLink to='/dashboard/manageUser'><FaUsers></FaUsers> Manage User</NavLink></li>
-                            <li><NavLink to='/dashboard/enrolledClasses'><VscDebugContinue></VscDebugContinue> Manage Classes </NavLink></li>
+                            <li><NavLink to='/dashboard/manageClasses'><VscDebugContinue></VscDebugContinue> Manage Classes </NavLink></li>
                             <li className="border-t-4 border-orange-500 mt-10"><NavLink to='/'><FaHome></FaHome> Home </NavLink></li>
                             <li><NavLink to='/classes'><FaCircle></FaCircle> All Classes </NavLink></li>
                             </> :
+                             isInstractor ? <>
+                             <li>
+                                 <div className='grid justify-items-center border-b-4 border-orange-500'>
+                                     <p className='text-orange-400 text-xl font-bold mb-2'>𝕊𝕡𝕠𝕣𝕥𝕤 𝔸𝕔𝕒𝕕𝕖𝕞𝕪</p>
+                                 </div>
+                             </li>
+ 
+                             <li><NavLink to='/dashboard/userHome'><FaHome></FaHome> Instractor Home</NavLink></li>
+                             <li>
+                                 <NavLink to='/dashboard/selectedClasses'><BiSelectMultiple></BiSelectMultiple> My Classes <div className="badge text-white bg-orange-500">+{selected.length}</div></NavLink></li>
+                             <li><NavLink to='/dashboard/enrolledClasses'><VscDebugContinue></VscDebugContinue> Add a Class </NavLink></li>
+                             <li><NavLink to='/dashboard/payment'><GiWallet></GiWallet> My Payment History </NavLink></li>
+                             <li className="border-t-4 border-orange-500 mt-10"><NavLink to='/'><FaHome></FaHome> Home </NavLink></li>
+                             <li><NavLink to='/classes'><FaCircle></FaCircle> All Classes </NavLink></li>
+ 
+                         </> :
                        
 
                             <>

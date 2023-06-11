@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo2.jpg';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import useAdmin from '../../../hooks/useAdmin';
 
 
 const Navber = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const [isAdmin] = useAdmin();
    
     const handleLogOut = () => {
         logOut()
@@ -19,7 +21,11 @@ const Navber = () => {
         <li className='text-amber-400 text-xl font-bold '><Link to='/instructors'><a>Instructors</a></Link></li>
         <li className='text-amber-400 text-xl font-bold '><Link to='/classes'><a>Classes</a></Link></li>
         <li className='text-amber-400 text-xl font-bold '>
-            <Link to='/dashboard/selectedClasses'><a>Dashboard </a></Link>
+            {
+                isAdmin ? <Link to='/dashboard/manageUser'><a>Dashboard </a></Link> :
+                <Link to='/dashboard/selectedClasses'><a>Dashboard </a></Link>
+            }
+            
         </li>
 
 

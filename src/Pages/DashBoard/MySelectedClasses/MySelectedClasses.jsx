@@ -28,14 +28,12 @@ const MySelectedClasses = () => {
                 .then(res => res.json())
                 .then(data =>{
                     if(data.deletedCount>0){
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Your work has been saved',
-                            showConfirmButton: false,
-                            timer: 1500
-                          })
-                          
+                        refetch();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                          )
                     }
                 })
               
