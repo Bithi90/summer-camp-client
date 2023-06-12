@@ -65,7 +65,8 @@ import ManageClass from "../Pages/DashBoard/ManageClass/ManageClass";
         },
         {
           path: 'payment',
-          element:<Payment></Payment>
+          element:<Payment></Payment>,
+          // loader:(({params})=>fetch(`http://localhost:5000/selected/${params.id}`))
         },{
           path:'manageClasses',
           element:<ManageClass></ManageClass>

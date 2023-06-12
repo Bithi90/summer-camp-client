@@ -8,7 +8,7 @@ import useSelected from "../../../hooks/useSelected";
 
 const MySelectedClassRow = ({ item, index }) => {
     const [, refetch] = useSelected();
-    const { Image, Name, Price, Instructor_name,  } = item;
+    const { Image, Name, Price, Instructor_name} = item;
 
     const handleDelete = (item) => {
         Swal.fire({
@@ -60,7 +60,7 @@ const MySelectedClassRow = ({ item, index }) => {
             </td>
             <td className="font-bold">Price : ${Price}</td>
             <th>
-                <Link price={Price} to={'/dashboard/payment'}><button className="btn bg-lime-700 btn-sm text-white">pay</button></Link>
+                <Link state={item}  to={`/dashboard/payment`}><button className="btn bg-lime-700 btn-sm text-white">pay</button></Link>
             </th>
             <th>
                 <button onClick={() => handleDelete(item)} className="btn text-2xl btn-sm text-red-600"><FaTrashAlt></FaTrashAlt></button>

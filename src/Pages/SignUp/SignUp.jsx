@@ -6,6 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { useRef } from "react";
 import Swal from "sweetalert2";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet-async";
 
 
 const SignUp = () => {
@@ -55,6 +56,10 @@ const SignUp = () => {
     }
 
     return (
+        <>
+         <Helmet>
+                <title>Sports Academy | Register</title>
+            </Helmet>
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
@@ -121,6 +126,7 @@ const SignUp = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

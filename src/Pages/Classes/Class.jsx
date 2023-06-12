@@ -18,9 +18,10 @@ const Class = ({ sport }) => {
     const location = useLocation();
 
     const handleSelect = sport => {
+        
         console.log(sport);
         if (user && user.email) {
-            const selectedItem = { Name, Image, Available_seats, Instructor_name, Price, classItemId: _id, email: user.email }
+            const selectedItem = { Name, Image, Available_seats, Instructor_name, Price, classItemId: _id, email: user.email };
             fetch('http://localhost:5000/selected', {
                 method: 'POST',
                 headers: {
