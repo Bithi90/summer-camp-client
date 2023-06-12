@@ -61,7 +61,7 @@ const ManageUsers = () => {
             
     }
 
-    const handleDelete = user =>{
+    const handleDelete = id =>{
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -72,7 +72,7 @@ const ManageUsers = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${user._id}`,{
+                fetch(`http://localhost:5000/users/${id}`,{
                     method: 'DELETE'
                 })
                 .then(res => res.json())

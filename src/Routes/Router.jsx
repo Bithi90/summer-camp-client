@@ -13,6 +13,9 @@ import Dashboard from "../LayOut/Dashboard";
 import MySelectedClasses from "../Pages/DashBoard/MySelectedClasses/MySelectedClasses";
 import PrivateRoutes from "./PrivateRoutes";
 import ManageUsers from "../Pages/DashBoard/ManageUsers/ManageUsers";
+import Addclass from "../Pages/DashBoard/AddClass/Addclass";
+import InstractorRoute from "./InstractorRoute";
+import Payment from "../Pages/DashBoard/Payment/Payment";
 
 
 
@@ -54,6 +57,14 @@ import ManageUsers from "../Pages/DashBoard/ManageUsers/ManageUsers";
         {
           path:'manageUser',
           element:<ManageUsers></ManageUsers>
+        },
+        {
+          path:'addClass',
+          element: <InstractorRoute><Addclass></Addclass></InstractorRoute>
+        },
+        {
+          path: 'payment',
+          element:<Payment></Payment>
         }
       ]
     },

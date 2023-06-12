@@ -2,6 +2,7 @@
 import { FaTrashAlt } from "react-icons/Fa";
 import useSelected from "../../../hooks/useSelected";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MySelectedClasses = () => {
@@ -86,7 +87,7 @@ const MySelectedClasses = () => {
                                 </td>
                                 <td className="font-bold">Price : ${item.Price}</td>
                                 <th>
-                                    <button className="btn bg-lime-700 btn-sm text-white">pay</button>
+                                    <Link to='/dashboard/payment'><button className="btn bg-lime-700 btn-sm text-white">pay</button></Link>
                                 </th>
                                 <th>
                                     <button onClick={() => handleDelete(item)} className="btn text-2xl btn-sm text-red-600"><FaTrashAlt></FaTrashAlt></button>

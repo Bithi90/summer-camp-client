@@ -56,8 +56,8 @@ const Dashboard = () => {
  
                              <li><NavLink to='/dashboard/userHome'><FaHome></FaHome> Instractor Home</NavLink></li>
                              <li>
-                                 <NavLink to='/dashboard/selectedClasses'><BiSelectMultiple></BiSelectMultiple> My Classes <div className="badge text-white bg-orange-500">+{selected.length}</div></NavLink></li>
-                             <li><NavLink to='/dashboard/enrolledClasses'><VscDebugContinue></VscDebugContinue> Add a Class </NavLink></li>
+                                 <NavLink to='/dashboard/selectedClasses'><BiSelectMultiple></BiSelectMultiple> My Classes</NavLink></li>
+                             <li><NavLink to='/dashboard/addClass'><VscDebugContinue></VscDebugContinue> Add a Class </NavLink></li>
                              <li><NavLink to='/dashboard/payment'><GiWallet></GiWallet> My Payment History </NavLink></li>
                              <li className="border-t-4 border-orange-500 mt-10"><NavLink to='/'><FaHome></FaHome> Home </NavLink></li>
                              <li><NavLink to='/classes'><FaCircle></FaCircle> All Classes </NavLink></li>
