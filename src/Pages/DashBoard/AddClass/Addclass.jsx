@@ -1,62 +1,43 @@
 import { useForm } from "react-hook-form";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
-const imgHostingToken=import.meta.env.VITE_ImgHostingToken;
+
 
 
 const Addclass = () => {
     const { user } = useContext(AuthContext);
-    const [axiosSecure] = useAxiosSecure();
-    const { register, handleSubmit, reset , formState:{errors} } = useForm();
-    const imgHostingUrl = `https://api.imgbb.com/1/upload?expiration=600&key=${imgHostingToken}`
-   
+    const { register, handleSubmit, reset,  } = useForm();
+    
 
     const onSubmit = data => {
         console.log(data);
-       const formData = new FormData();
-       formData.append('Image', data.Image[0])
-       fetch(imgHostingUrl ,{
-        method:'POST',
-        body: formData
-       })
-       .then(res => res.json())
-       .then(imgResponse => {
-        console.log(imgResponse)
-       })
-        // console.log(formData);
-        // formData.append('Image', data.Image[0])
+        const formData = new FormData();
+        formData.append('Image', data.Image)
+        const item = { Image: data.Image, Name: data.Name,category: data.category,Price:data.Price,Available_seats:data.Available_seats, Instructor_name:user.displayName ,status: 'pending'}
+        fetch('http://localhost:5000/pendingClass', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body:JSON.stringify(item)
+        })
+        .then(res=> res.json())
+        .then(resData =>{
+            if (resData.insertedId) {
+                reset();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        })
 
-        // fetch(imgHostingUrl, {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        //     .then(res => res.json())
-        //     .then(imgResponse => {
-        //         if (imgResponse.success) {
-        //             const imgURL = imgResponse.data.display_url;
-        //             const { Name, Price, category  } = data;
-        //             const newItem = { Name, Price: parseFloat(Price), category, Image: imgURL, Instractor_Name:user.displayName, Instractor_Email:user.email }
-        //             console.log(newItem)
-        //             axiosSecure.post('/class', newItem)
-        //                 .then(data => {
-        //                     console.log('after posting new class item', data.data)
-        //                     if (data.data.insertedId) {
-        //                         reset();
-        //                         Swal.fire({
-        //                             position: 'top-end',
-        //                             icon: 'success',
-        //                             title: 'Item added successfully',
-        //                             showConfirmButton: false,
-        //                             timer: 1500
-        //                         })
-        //                     }
-        //                 })
-        //         }
-        //     })
-
+       
     };
     return (
         <div className="w-full ml-20">
@@ -90,11 +71,13 @@ const Addclass = () => {
                     </div>
                 </div>
                 <div className="flex my-4">
-                    <div className="form-control w-full ">
+                   
+                    <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Class Image*</span>
+                            <span className="label-text">Photo URL</span>
                         </label>
-                        <input type="file" {...register("Image", { required: true })} className="file-input file-input-bordered w-full " />
+                        <input type="text" {...register("Image", { required: true })} name="Image" placeholder="PhotoURL" className="input input-bordered" />
+
                     </div>
                     <div className="form-control w-full ml-4">
                         <label className="label">

@@ -1,46 +1,18 @@
 /* eslint-disable react/no-unknown-property */
-import { FaTrashAlt } from "react-icons/Fa";
+
 import useSelected from "../../../hooks/useSelected";
-import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+
+import MySelectedClassRow from "./MySelectedClassRow";
 
 
 const MySelectedClasses = () => {
 
-    const [selected, refetch] = useSelected();
+    const [selected] = useSelected();
     console.log(selected);
 
     const totalPrice = selected.reduce((sum, item) => parseFloat(item.Price) + parseFloat(sum), 0)
 
-    const handleDelete =(item) =>{
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`http://localhost:5000/selected/${item._id}`,{
-                    method: 'DELETE'
-                })
-                .then(res => res.json())
-                .then(data =>{
-                    if(data.deletedCount>0){
-                        refetch();
-                        Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                          )
-                    }
-                })
-              
-            }
-          })
-    }
+   
 
     return (
         <div className="w-full ml-20">
@@ -64,12 +36,16 @@ const MySelectedClasses = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
                         {
-                            selected.map((item , index) => <tr
+                            selected.map((item, index,) => <MySelectedClassRow
                                 key={item._id}
                                 item={item}
-                            >
+                                index={index}
+                            ></MySelectedClassRow>)  
+                        }
+                        {/* row 1 */}
+                        
+                             {/* <tr>
                                 <td>{index}</td>
                                 <td>
                                     <div className="flex items-center ">
@@ -81,19 +57,19 @@ const MySelectedClasses = () => {
                                     </div>
                                 </td>
                                 <td>
-                                  <h2 className="font-bold">{item.Name}</h2></td>
+                                    <h2 className="font-bold">{item.Name}</h2></td>
                                 <td>
                                     <div className="text-sm font-bold">Instructor Name : {item.Instructor_name}</div>
                                 </td>
                                 <td className="font-bold">Price : ${item.Price}</td>
                                 <th>
-                                    <Link to='/dashboard/payment'><button className="btn bg-lime-700 btn-sm text-white">pay</button></Link>
+                                    <Link price={item.Price} to={`/dashboard/payment/${item._id}`}><button className="btn bg-lime-700 btn-sm text-white">pay</button></Link>
                                 </th>
                                 <th>
                                     <button onClick={() => handleDelete(item)} className="btn text-2xl btn-sm text-red-600"><FaTrashAlt></FaTrashAlt></button>
                                 </th>
-                            </tr>)
-                        }
+                            </tr> */}
+                        
 
                     </tbody>
                 </table>
