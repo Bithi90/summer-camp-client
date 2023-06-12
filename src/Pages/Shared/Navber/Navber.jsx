@@ -3,12 +3,14 @@ import logo from '../../../assets/logo2.jpg';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
+import useInstractor from '../../../hooks/useInstractor';
 
 
 const Navber = () => {
 
     const { user, logOut } = useContext(AuthContext);
     const [isAdmin] = useAdmin();
+    const [isInstractor] = useInstractor();
    
     const handleLogOut = () => {
         logOut()
@@ -23,6 +25,7 @@ const Navber = () => {
         <li className='text-amber-400 text-xl font-bold '>
             {
                 isAdmin ? <Link to='/dashboard/manageUser'><a>Dashboard </a></Link> :
+               isInstractor? <Link to='/dashboard/instractorClass'><a>Dashboard </a></Link> :
                 <Link to='/dashboard/selectedClasses'><a>Dashboard </a></Link>
             }
             

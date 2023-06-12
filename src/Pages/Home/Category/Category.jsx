@@ -15,10 +15,10 @@ const Category = () => {
                         <img src={indoorImg} alt="Shoes" className="rounded-xl h-[300px] w-[400px]" />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <h2 className="card-title">Indoor</h2>
+                        <p>Indoor classes</p>
                         <div className="card-actions">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <button className="btn bg-lime-700 btn-sm text-white"> See All</button>
                         </div>
                     </div>
                 </div>
@@ -27,10 +27,10 @@ const Category = () => {
                         <img src={outdoorImg} alt="Shoes" className="rounded-xl h-[300px] w-[400px]" />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <h2 className="card-title">Outdoor!</h2>
+                        <p>Outdoor Classes</p>
                         <div className="card-actions">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <button className="btn bg-lime-700 btn-sm text-white">See All</button>
                         </div>
                     </div>
                 </div>

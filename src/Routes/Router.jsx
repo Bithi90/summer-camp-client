@@ -17,6 +17,7 @@ import Addclass from "../Pages/DashBoard/AddClass/Addclass";
 import InstractorRoute from "./InstractorRoute";
 import Payment from "../Pages/DashBoard/Payment/Payment";
 import ManageClass from "../Pages/DashBoard/ManageClass/ManageClass";
+import InstractorClass from "../Pages/DashBoard/InstractorClass/InstractorClass";
 
 
 
@@ -70,6 +71,9 @@ import ManageClass from "../Pages/DashBoard/ManageClass/ManageClass";
         },{
           path:'manageClasses',
           element:<ManageClass></ManageClass>
+        },{
+          path:'instractorClass',
+          element:<InstractorClass></InstractorClass>
         }
       ]
     },

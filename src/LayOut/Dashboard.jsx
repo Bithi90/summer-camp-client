@@ -45,7 +45,7 @@ const Dashboard = () => {
                                     </div>
                                 </li>
 
-                                <li><NavLink to='/dashboard/adminHome'><FaHome></FaHome> Admin Home</NavLink></li>
+                                <li><NavLink to='/'><FaHome></FaHome> Admin Home</NavLink></li>
                                 <li>
                                     <NavLink to='/dashboard/manageUser'><FaUsers></FaUsers> Manage User</NavLink></li>
                                 <li><NavLink to='/dashboard/manageClasses'><VscDebugContinue></VscDebugContinue> Manage Classes </NavLink></li>
@@ -59,11 +59,10 @@ const Dashboard = () => {
                                         </div>
                                     </li>
 
-                                    <li><NavLink to='/dashboard/userHome'><FaHome></FaHome> Instractor Home</NavLink></li>
+                                    <li><NavLink to='/'><FaHome></FaHome> Instractor Home</NavLink></li>
                                     <li>
-                                        <NavLink to='/dashboard/selectedClasses'><BiSelectMultiple></BiSelectMultiple> My Classes</NavLink></li>
+                                        <NavLink to='/dashboard/instractorClass'><BiSelectMultiple></BiSelectMultiple> My Classes</NavLink></li>
                                     <li><NavLink to='/dashboard/addClass'><VscDebugContinue></VscDebugContinue> Add a Class </NavLink></li>
-                                    <li><NavLink to='/dashboard/paymentHostory'><GiWallet></GiWallet> My Payment History </NavLink></li>
                                     <li className="border-t-4 border-orange-500 mt-10"><NavLink to='/'><FaHome></FaHome> Home </NavLink></li>
                                     <li><NavLink to='/classes'><FaCircle></FaCircle> All Classes </NavLink></li>
 
@@ -77,10 +76,10 @@ const Dashboard = () => {
                                             </div>
                                         </li>
 
-                                        <li><NavLink to='/dashboard/userHome'><FaHome></FaHome> User Home</NavLink></li>
+                                        <li><NavLink to='/'><FaHome></FaHome> User Home</NavLink></li>
                                         <li>
                                             <NavLink to='/dashboard/selectedClasses'><BiSelectMultiple></BiSelectMultiple> My Selected Classes <div className="badge text-white bg-orange-500">+{selected.length}</div></NavLink></li>
-                                        <li><NavLink to='/dashboard/enrolledClasses'><VscDebugContinue></VscDebugContinue> My Enrolled Classes </NavLink></li>
+                                        <li><NavLink to='/dashboard/selectedClasses'><VscDebugContinue></VscDebugContinue> My Enrolled Classes </NavLink></li>
                                         <li><NavLink to='/dashboard/payment'><GiWallet></GiWallet> My Payment History </NavLink></li>
                                         <li className="border-t-4 border-orange-500 mt-10"><NavLink to='/'><FaHome></FaHome> Home </NavLink></li>
                                         <li><NavLink to='/classes'><FaCircle></FaCircle> All Classes </NavLink></li>

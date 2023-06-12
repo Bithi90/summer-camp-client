@@ -6,10 +6,12 @@ import CheckoutForm from "./CheckoutForm";
 import { useLoaderData, useLocation } from "react-router-dom";
 
 
+
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_PK);
 
 const Payment = () => {
 
+   
     const {state} = useLocation();
     
 console.log(state);
@@ -18,7 +20,7 @@ console.log(state);
             <h2>payment continue</h2>
             
             <Elements stripe={stripePromise}>
-               <CheckoutForm price={state.Price} ></CheckoutForm>
+               <CheckoutForm state={state} price={state.Price} ></CheckoutForm>
             </Elements>
         </div>
     );

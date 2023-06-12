@@ -129,9 +129,9 @@ const ManageClass = () => {
                                 </td>
                                 <td>
                                     {
-                                        pendingClass.status === 'Approved' ?<>
+                                        pendingClass.status === 'Approved' ?
                                             <button disabled={true} className="btn  btn-sm">Approved </button>
-                                        </> : 
+                                         : 
                                         <button onClick={() => handleApproved(pendingClass)} className="btn bg-lime-700 btn-sm text-white">Approved</button>
                                     }
                                 
